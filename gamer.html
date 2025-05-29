@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE DREAM SMP </title>
+    <link rel="stylesheet" href="quiztype.css">
+</head>
+<body>
+    <div class="container">
+      <div id="quiz" class="centered">
+
+        <h1>AMONG US</h1>
+        <h2 id="question" class="headline-secondary--grouped"></h2>
+        <h3 id="score"></h3>
+
+        <p id="choice0"></p>
+        <button id="guess0" class="btn--default">Select Answer</button>
+
+        <p id="choice1"></p>
+        <button id="guess1" class="btn--default">Select Answer</button>
+
+         <p id="choice2"></p>
+        <button id="guess2" class="btn--default">Select Answer</button>
+
+        <p id="choice3"></p>
+        <button id="guess3" class="btn--default">Select Answer</button>
+        
+       
+      <footer>
+        <p id="progress">Question x of y</p>
+         <button id="next-btn" class="btn--default">Next Question</button>
+        <button id="finish" class="btn--default">Finish Quiz</button>   
+        <button id="restart" class="btn--default">Restart Quiz</button>
+        <a href="intropage.html" id="Home" class="btn--default" > Home</a>
+      </footer>
+        </div>
+    <script src="gamer.js"></script>
+        <!-- Add background music -->
+    <audio id="bg-music" src="amongus.mp3" loop hidden></audio>
+    <button id="music-toggle">Play Music</button>
+    <script>
+      const music = document.getElementById('bg-music');
+      const toggleBtn = document.getElementById('music-toggle');
+      let isPlaying = false;
+
+      toggleBtn.onclick = function() {
+        if (isPlaying) {
+          music.pause();
+          toggleBtn.textContent = 'Play Music';
+        } else {
+          music.play();
+          toggleBtn.textContent = 'Pause Music';
+        }
+        isPlaying = !isPlaying;
+      };
+
+      // Optional: Try to autoplay muted, then unmute on user interaction
+      document.addEventListener('DOMContentLoaded', () => {
+        music.volume = 0.5;
+      });
+    </script>
+</body>
+</html>
