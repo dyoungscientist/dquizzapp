@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DQuizapp</title>
+    <link rel="stylesheet" href="intropage.css">
+</head>
+<body> 
+    <div id="user-selection">
+        <br><img src="logopl.png" width="300px" alt="DQuizapp logo featuring bold colorful letters with a playful and welcoming design, set against a bright background. The logo text reads DQuizapp. The overall tone is cheerful and inviting."><br>
+        <button id="settings">Settings</button> 
+         
+      <h1>Welcome to DQuizapp</h1>
+    </div>
+    <div class="container">
+    <div class="quiz-type">
+    <p>Choose a quiz type to get started:</p>
+    <ul>
+    <p>
+    <a href="quiztype.html">ARE YOU A CHEF?</a></li>
+    <a href="doctor.html">ARE YOU A DOCTOR?</a></li>
+    <a href="gamer.html">ARE YOU A GAMER?</a></li>
+    </p>
+    </ul>
+    <!-- Add background music -->
+    <audio id="bg-music" src="wiisports.mp3" loop hidden></audio>
+    <button id="music-toggle">Play Music</button>
+    <script>
+      const music = document.getElementById('bg-music');
+      const toggleBtn = document.getElementById('music-toggle');
+      let isPlaying = false;
+
+      toggleBtn.onclick = function() {
+        if (isPlaying) {
+          music.pause();
+          toggleBtn.textContent = 'Play Music';
+        } else {
+          music.play();
+          toggleBtn.textContent = 'Pause Music';
+        }
+        isPlaying = !isPlaying;
+      };
+
+      // Optional: Try to autoplay muted, then unmute on user interaction
+      document.addEventListener('DOMContentLoaded', () => {
+        music.volume = 0.5;
+      });
+    </script>
+       
+      
+</body>
+</html>
